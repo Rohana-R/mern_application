@@ -22,6 +22,15 @@ pipeline {
                }
         }
       }
+      stage('docker push') {
+            steps {
+                script {
+                    withDockerRegistry(credentialsId: 'docker-cred') {
+                    sh 'docker push rohana1234/mern_application'
+                    }
+                }
+            }
+        }
       stage('docker compose') {
             steps {
                 script {
