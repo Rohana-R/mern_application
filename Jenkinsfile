@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker-cred') {
-                    sh 'docker push rohana1234/mern_application'
+                    sh 'docker push rohana1234/pipelinemern-app-frontend','rohana1234/pipelinemern-app-backend','rohana1234/mongo'
                     }
                 }
             }
