@@ -7,7 +7,7 @@ pipeline {
                 git 'https://github.com/Rohana-R/mern_application.git'
             }
         }
-        stage('Run Docker Compose') {
+        stage('docker compose') {
             steps {
                 script{
                     sh 'docker-compose up -d'
