@@ -26,7 +26,10 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker-cred') {
-                    sh 'docker push rohana1234/pipelinemern-app-frontend','rohana1234/pipelinemern-app-backend','rohana1234/mongo'
+                    sh 'docker tag pipelinemern-app-frontend rohana1234/pipelinemern-app-frontend'
+                    sh 'docker tag pipelinemern-app-backend rohana1234/pipelinemern-app-backend'
+                    sh 'docker push rohana1234/pipelinemern-app-frontend'
+                    sh 'docker push rohana1234/pipelinemern-app-backend'    
                     }
                 }
             }
@@ -42,7 +45,7 @@ pipeline {
     post {
         always {
             echo 'slack Notification.'
-            slackSend channel: '#jenkins-slack',
+            slackSend channel: '#sonarqube-mern',
             color: COLOR_MAP [currentBuild.currentResult],
             message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} \n More info at: ${env.BUILD_URl}"     
         }
