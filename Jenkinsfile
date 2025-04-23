@@ -17,7 +17,6 @@ pipeline {
         steps {
             withSonarQubeEnv('sonar-server') {
                 sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=mern_applicatio \
-               -Dsonar.java.binaries=. \
                -Dsonar.projectKey=mern_application'''
                }
         }
