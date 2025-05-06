@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: sushmagowda321/mernbackend
+          image: rohana1234/mern_application-backend
           env:
             - name: MONGO_URI
               value: "mongodb://mongo:27017/budhan-users"
