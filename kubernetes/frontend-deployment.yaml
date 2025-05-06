@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: sushmagowda321/mernfrontend
+          image: rohana1234/mern_application-frontend
           ports:
             - containerPort: 80
